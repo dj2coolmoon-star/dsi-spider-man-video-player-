@@ -1,0 +1,26 @@
+name: Build DSi Video Hub
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project files
+        uses: actions/checkout@v4
+
+      - name: Build NDS
+        run: |
+          docker run --rm \
+            -v "$PWD/SpiderVerse-DSi-Video-Hub-GitHub-Starter:/work" \
+            -w /work \
+            skylyrac/blocksds:slim-v1.16.0 \
+            make
+
+      - name: Upload NDS file
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpiderVerse-Video-Hub
+          path: SpiderVerse-DSi-Video-Hub-GitHub-Starter/*.nds
