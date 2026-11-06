@@ -7,7 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Get project files
         uses: actions/checkout@v4
@@ -16,7 +15,7 @@ jobs:
         run: |
           docker run --rm \
             -v "$PWD:/work" \
-            -w /work \
+            -w /work/SpiderVerse-DSi-Video-Hub-GitHub-Starter \
             skylyrac/blocksds:slim-latest \
             make
 
@@ -24,4 +23,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SpiderVerse-Video-Hub
-          path: "*.nds"
+          path: SpiderVerse-DSi-Video-Hub-GitHub-Starter/*.nds
