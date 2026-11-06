@@ -6,7 +6,7 @@ GAME_TITLE := SpiderVerse Video Hub
 GAME_SUBTITLE := DSi Homebrew
 GAME_AUTHOR := SpiderVerse
 
-SOURCEDIRS := source
+SOURCEDIRS := SpiderVerse-DSi-Video-Hub-GitHub-Starter/source
 
 LIBS := -lnds9
 
