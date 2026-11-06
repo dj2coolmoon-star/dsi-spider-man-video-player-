@@ -1,5 +1,6 @@
 #include <nds.h>
 #include <fat.h>
+#include <sys/stat.h>
 #include <dirent.h>
 #include <stdio.h>
 #include <string.h>
